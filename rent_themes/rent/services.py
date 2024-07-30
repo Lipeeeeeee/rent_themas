@@ -1,0 +1,3 @@
+class Util:
+    def calcular_desconto(idCliente: int):
+        ...

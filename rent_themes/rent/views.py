@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import *
+from .services import *
 
 
 #Página inicial com a lista de clientes
@@ -200,7 +201,8 @@ class RentViews:
                  end_hours=request.POST['end_hours'],
                  client_id= request.POST['select_client'],
                  theme_id = request.POST['select_theme'],
-                 address = a )
+                 address = a)
+        r.value = Util.calcular_desconto(r.client_id)
         r.save()
         return redirect('/listRent')
 
