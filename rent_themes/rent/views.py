@@ -202,7 +202,8 @@ class RentViews:
                  client_id= request.POST['select_client'],
                  theme_id = request.POST['select_theme'],
                  address = a)
-        r.value = Util.calcular_desconto(r.client_id)
+        # o desconto depende do cliente e do tema
+        r.value = Util.calcular_desconto(r.client_id, r.theme_id) 
         r.save()
         return redirect('/listRent')
 

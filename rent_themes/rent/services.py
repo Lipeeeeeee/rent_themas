@@ -1,3 +1,3 @@
 class Util:
-    def calcular_desconto(idCliente: int):
+    def calcular_desconto(self, idCliente: int, idTema: int):
         ...
